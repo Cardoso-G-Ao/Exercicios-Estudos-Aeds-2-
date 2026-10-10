@@ -1,0 +1,28 @@
+Exercício 17 - Fila cheia
+
+Enunciado: em testefilacircular.c, trocar MAX para 3, inserir 4 valores e
+explicar por que aparece "Erro: Fila cheia!".
+
+Resposta:
+
+Com MAX = 3, o vetor da fila circular tem MAX + 1 = 4 posições, mas a fila
+guarda no máximo 3 elementos. Uma posição fica sempre livre para diferenciar
+fila cheia de fila vazia. Se as 4 posições fossem usadas, primeiro == ultimo
+aconteceria nos dois casos e não daria para saber se a fila está vazia ou cheia.
+
+A fila é considerada cheia quando o próximo valor de ultimo alcançaria o
+primeiro:
+
+    (ultimo + 1) % (MAX + 1) == primeiro
+
+Acompanhando as inserções (primeiro = 0 o tempo todo):
+
+    Inserir 10: (0 + 1) % 4 = 1, diferente de 0 -> entra, ultimo = 1
+    Inserir 20: (1 + 1) % 4 = 2, diferente de 0 -> entra, ultimo = 2
+    Inserir 30: (2 + 1) % 4 = 3, diferente de 0 -> entra, ultimo = 3
+    Inserir 40: (3 + 1) % 4 = 0, igual a 0      -> fila cheia
+
+Na quarta inserção, o próximo ultimo voltaria para a posição 0, que é a do
+primeiro. A condição de fila cheia fica verdadeira, então a função inserir
+imprime "Erro: Fila cheia!" e termina sem inserir. O valor 40 é descartado e a
+fila continua com [ 10 20 30 ].
