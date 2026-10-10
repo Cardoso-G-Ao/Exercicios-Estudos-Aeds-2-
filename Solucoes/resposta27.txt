@@ -1,0 +1,36 @@
+Exercício 27 - Radix e Bucket em uma frase
+
+Enunciado: explicar com suas palavras a ideia de cada um.
+Dica: um olha dígito por dígito, o outro separa em faixas.
+
+Radix Sort
+----------
+O Radix Sort ordena os números olhando um dígito de cada vez, do menos
+significativo (unidades) para o mais significativo, e a cada passada ordena
+todos os números só por aquele dígito, mantendo a ordem dos iguais (de forma
+estável). Depois da última passada, o vetor está ordenado.
+
+Exemplo: [170, 45, 75, 90]
+    Passada das unidades:  170 90 45 75
+    Passada das dezenas:   45 170 75 90
+    Passada das centenas:  45 75 90 170
+
+Bucket Sort
+-----------
+O Bucket Sort separa os elementos em "baldes" (faixas de valores), joga cada
+elemento no balde da sua faixa, ordena cada balde individualmente e depois
+junta os baldes em ordem.
+
+Exemplo: valores entre 0 e 99, com 4 baldes
+    Faixas: 0-24 | 25-49 | 50-74 | 75-99
+    [12, 80, 33, 47, 5, 91] ->
+        balde 1: 12 5     -> 5 12
+        balde 2: 33 47    -> 33 47
+        balde 3: (vazio)
+        balde 4: 80 91    -> 80 91
+    Juntando: 5 12 33 47 80 91
+
+Diferença
+---------
+O Radix divide o trabalho por dígito (cada passada olha uma posição do número),
+enquanto o Bucket divide por faixa de valor (cada balde cuida de um intervalo).
