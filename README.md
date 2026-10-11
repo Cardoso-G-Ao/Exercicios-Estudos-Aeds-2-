@@ -6,11 +6,16 @@ Repositório de **exercícios práticos** da disciplina **Algoritmos e Estrutura
 
 ## 🎯 Objetivo
 
-Estudar só lendo guias não basta para fixar estruturas de dados. Este repositório existe para **treinar o que foi estudado** no Estudos-Aeds-2, com exercícios curtos, de um passo só, que seguem a mesma ordem do material:
+Estudar só lendo guias não basta para fixar estruturas de dados. Este repositório existe para **treinar o que foi estudado** no Estudos-Aeds-2, em dois níveis, sempre na mesma ordem do material:
 
 **células → listas → filas → pilha → ordenações**
 
-Os exercícios usam os mesmos arquivos e nomes do repositório de estudos (`Celula.c`, `CelulaDupla.c`, `LIstaFlexivel.c`, `testefilacircular.c`, `cont`, `ant`, `MAX` e assim por diante). Assim, cada exercício aponta para o código que você já viu e pede uma pequena mudança ou extensão nele.
+Os exercícios usam os mesmos arquivos e nomes do repositório de estudos (`Celula.c`, `CelulaDupla.c`, `LIstaFlexivel.c`, `testefilacircular.c`, `cont`, `ant`, `MAX` e assim por diante). Assim, cada exercício aponta para o código que você já viu e pede uma mudança ou extensão nele.
+
+| Nível | O que pede | Onde está |
+|---|---|---|
+| **Básico** | Exercícios curtos, de um passo só (ler, contar, somar, imprimir, remover um elemento ou simular no papel) | `ExerciciosBasicos/` |
+| **Intermediário** | Exercícios um pouco mais completos: mais de uma operação, tratamento de erros, exemplos para conferir e comparações entre as estruturas e os algoritmos | `ExerciciosIntermediarios/` |
 
 ---
 
@@ -19,7 +24,7 @@ Os exercícios usam os mesmos arquivos e nomes do repositório de estudos (`Celu
 | Repositório | Papel | O que tem |
 |---|---|---|
 | [**Estudos-Aeds-2**](https://github.com/Cardoso-G-Ao/Estudos-Aeds-2) | Teoria e referência | Guias (`.md`), demonstrações (`.html`) e códigos em C |
-| **Exercicios-Estudos-Aeds-2-** (este) | Prática | Lista de exercícios e soluções em C |
+| **Exercicios-Estudos-Aeds-2-** (este) | Prática | Listas de exercícios (PDF) e soluções em C |
 
 Fluxo sugerido de uso:
 
@@ -33,24 +38,34 @@ Fluxo sugerido de uso:
 
 ```
 Exercicios-Estudos-Aeds-2-/
-├── README.md                          # este arquivo
+├── README.md                                  # este arquivo
 ├── .gitignore
 │
 ├── ExerciciosBasicos/
-│   └── 30 exercícios de AEDs 2.pdf    # enunciados dos 30 exercícios
+│   └── 30 exercícios de AEDs 2.pdf            # enunciados do nível básico
 │
-└── Solucoes/                          # soluções em C
+├── ExerciciosIntermediarios/
+│   └── Exercicios Intermediarios de AEDs 2.pdf  # enunciados do nível intermediário
+│
+└── Solucoes/                                  # soluções do nível básico
     ├── ex1.c
     ├── ex2.c
     ├── ...
-    └── ex11.c
+    ├── ex26.c
+    ├── ex28.c ... ex30.c
+    ├── resposta17.txt                         # explicação escrita do exercício 17
+    └── resposta27.txt                         # resposta do exercício 27 (sem código)
 ```
 
 ---
 
-## 📋 Os 30 exercícios
+## 📋 Os exercícios
 
-O enunciado completo está em [`ExerciciosBasicos/30 exercícios de AEDs 2.pdf`](ExerciciosBasicos). Eles são divididos por assunto, na mesma ordem do repositório de estudos:
+Os dois PDFs têm **30 exercícios** cada e são divididos por assunto, na mesma ordem do repositório de estudos.
+
+### Nível básico
+
+Enunciados em [`ExerciciosBasicos/30 exercícios de AEDs 2.pdf`](ExerciciosBasicos).
 
 | Assunto | Exercícios | Pasta correspondente no Estudos-Aeds-2 |
 |---|---|---|
@@ -65,13 +80,37 @@ Dois tipos de exercício aparecem na lista:
 - **De código:** pedem para ler, inserir, remover, contar ou procurar elementos, reaproveitando os arquivos `.c` do repositório de estudos.
 - **De papel:** pedem para simular um algoritmo à mão (por exemplo, Insertion Sort em `[5, 2, 4, 1, 3]` ou uma partição do Quick Sort) ou explicar uma ideia com as próprias palavras. A recomendação do próprio PDF é resolver no papel primeiro e depois conferir nas demonstrações interativas.
 
+### Nível intermediário
+
+Enunciados em [`ExerciciosIntermediarios/Exercicios Intermediarios de AEDs 2.pdf`](ExerciciosIntermediarios).
+
+| Assunto | Exercícios | Pasta correspondente no Estudos-Aeds-2 |
+|---|---|---|
+| Células | 1 a 4 | `CelulaEstrutura/` |
+| Listas | 5 a 11 | `LIsta/` |
+| Filas | 12 a 18 | `Fila/` |
+| Pilha | 19 a 22 | `Pilha/` |
+| Ordenações | 23 a 30 | `Ordenacoes/` |
+
+O que muda em relação ao básico:
+
+- **Estruturas:** inserção e remoção em posição, remoção por valor, junção de listas ordenadas, filas com comandos, fila dupla nos dois sentidos e fila circular com e sem a posição de segurança.
+- **Pilha:** aplicações reais, como calculadora pós-fixa, parênteses balanceados, conversão para binário e fila feita com duas pilhas.
+- **Ordenações:** um exercício para cada algoritmo (Insertion, Selection, Counting, Radix, Bucket, Merge, Quick e Heap), com contagem de comparações, passo a passo e inversões.
+- **Quadros "CONFIRA":** vários exercícios trazem resultados prontos para você comparar com os seus.
+
 ---
 
 ## ✅ Soluções
 
-A pasta `Solucoes/` reúne as resoluções em C, um programa por arquivo (`ex1.c`, `ex2.c`, ... `ex11.c`). Cada arquivo tem o seu próprio `main`, então compile um de cada vez.
+A pasta `Solucoes/` reúne as resoluções em C do **nível básico**, um programa por arquivo (`ex1.c`, `ex2.c`, ... `ex30.c`). Cada arquivo tem o seu próprio `main`, então compile um de cada vez.
 
-As soluções estão sendo adicionadas aos poucos: no momento a pasta cobre os exercícios de **1 a 11**, e os demais serão incluídos conforme forem resolvidos.
+A pasta cobre os exercícios de **1 a 30**, com duas particularidades:
+
+- **Exercício 17 (fila cheia):** tem o código `ex17.c` e a explicação escrita em `resposta17.txt`.
+- **Exercício 27 (Radix e Bucket em uma frase):** é uma explicação, então a resposta está só em `resposta27.txt`, sem `.c`.
+
+As soluções do **nível intermediário** ainda não foram adicionadas.
 
 ---
 
@@ -105,7 +144,8 @@ Exemplo de execução do exercício de procurar valor:
 1. Comece pelas **células** (1 a 4): elas são a base de listas, filas e pilha.
 2. Siga para **listas** e **filas**, sempre relendo o código correspondente no Estudos-Aeds-2.
 3. Faça a **pilha** e depois as **ordenações**, que são mais conceituais e pedem simulação no papel.
-4. Por último, compare suas respostas com as demonstrações interativas.
+4. Termine o **nível básico** e compare suas respostas com as demonstrações interativas e com a pasta `Solucoes/`.
+5. Passe para o **nível intermediário**, na mesma ordem de assuntos, usando os quadros "CONFIRA" para conferir seus resultados.
 
 ---
 
