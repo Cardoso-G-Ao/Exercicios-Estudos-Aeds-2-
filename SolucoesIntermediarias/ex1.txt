@@ -1,0 +1,2 @@
+O ponteiro para o primeiro não precisa ser verificado em um if para ver se 
+e NULL porque ele ja vem com um valor fazendo com que ele nunca seja NULL.
